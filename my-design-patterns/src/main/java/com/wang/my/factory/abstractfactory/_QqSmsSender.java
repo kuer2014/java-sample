@@ -7,6 +7,7 @@ package com.wang.my.factory.abstractfactory;
  * @version 1.0  2018/9/25 16:36  by  王帅（wangshuai@cloud-young.com）创建
  */
 public class _QqSmsSender extends AbstractSmsSender {
+    @Override
     public void send() {
         System.out.println("QQ Sms send.");
     }
