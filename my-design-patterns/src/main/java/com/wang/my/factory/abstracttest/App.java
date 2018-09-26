@@ -13,5 +13,11 @@ public class App {
         AbstractProductB productB1=abstractFactory1.createProductB();
         productA1.use();
         productB1.eat();
+
+        AbstractFactory abstractFactory2 =new ConcreteFactory2();
+        AbstractProductA productA2=abstractFactory2.createProductA();
+        AbstractProductB productB2=abstractFactory2.createProductB();
+        productA2.use();
+        productB2.eat();
     }
 }

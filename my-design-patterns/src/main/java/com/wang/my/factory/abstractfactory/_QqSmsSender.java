@@ -1,4 +1,4 @@
-package com.wang.my.factory.abstractfactory2;
+package com.wang.my.factory.abstractfactory;
 
 /**
  * Description:
@@ -6,8 +6,8 @@ package com.wang.my.factory.abstractfactory2;
  *
  * @version 1.0  2018/9/25 16:36  by  王帅（wangshuai@cloud-young.com）创建
  */
-public class SmsSenderImpl implements SmsSender {
+public class _QqSmsSender extends AbstractSmsSender {
     public void send() {
-        System.out.println("Sms send.");
+        System.out.println("QQ Sms send.");
     }
 }
