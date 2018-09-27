@@ -9,6 +9,9 @@ package com.wang.my.adapter.objectadapter;
  */
 public class App {
     public static void main(String[] args) {
+       //不用适配器，只能usb调用
+        new UsbImpl().usb();
+        //使用适配器，可以通过TypeC调用
         TypeC typeC = new Adapter(new UsbImpl());
         typeC.typeC();
     }
