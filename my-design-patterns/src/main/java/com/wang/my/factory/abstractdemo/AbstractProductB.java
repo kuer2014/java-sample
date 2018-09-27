@@ -1,4 +1,4 @@
-package com.wang.my.factory.abstracttest;
+package com.wang.my.factory.abstractdemo;
 
 /**
  * Description:
