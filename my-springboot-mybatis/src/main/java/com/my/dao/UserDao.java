@@ -4,6 +4,7 @@ import com.my.model.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Description:
@@ -18,4 +19,10 @@ public interface UserDao {
     User findById(Long id);
 
     List<User> findAll();
+
+    /**
+     * 参数和结果都在params中
+     * @param params
+     */
+    void findEmailByName(Map<String, Object> params);
 }

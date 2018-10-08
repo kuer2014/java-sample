@@ -5,7 +5,9 @@ import com.my.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Description:
@@ -37,6 +39,19 @@ public class UserController {
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String test() {
         return "true";
+    }
+    /**
+     * @Descpription:存储过程调用测试
+     * @version 1.0  2018/10/8 18:22   by  王帅（wangshuai@cloud-young.com）创建
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/getemail/{name}", method = RequestMethod.GET)
+    public String get(@PathVariable("name") String name) {
+        Map<String, Object> params =new HashMap<>();
+        params.put("name",name);
+         service.findEmailByName(params);
+         return params.get("email")+"";
     }
 
 }

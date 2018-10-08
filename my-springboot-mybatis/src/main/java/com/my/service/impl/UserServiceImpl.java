@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Description:
@@ -32,5 +33,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> list() {
         return dao.findAll();
+    }
+    @Override
+    public void findEmailByName(Map<String, Object> params){
+        dao.findEmailByName( params);
     }
 }
