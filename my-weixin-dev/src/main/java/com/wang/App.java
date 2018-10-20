@@ -15,10 +15,10 @@ import java.util.Dictionary;
 public class App {
     public static void main(String[] args) {
 
-     QRCodeUtil.createQrCode("https://www.baidu.com/"
+     boolean result =QRCodeUtil.createQrCode("https://www.baidu.com/"
              ,"/Users/wangshuai/Documents/projects/mycode/my-weixin-dev/src/main/resources/qrcode"
              ,"123"
-     ,"bmp",200,200);
-
+     ,".jpg",200,200);
+        System.out.println(result);
     }
 }

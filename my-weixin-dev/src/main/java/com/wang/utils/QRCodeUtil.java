@@ -57,13 +57,14 @@ public class QRCodeUtil {
             if (file.exists() || ((file.getParentFile().exists() || file.getParentFile().mkdirs()) && file.createNewFile())) {
                 writeToFile(bitMatrix, extension, file);
                 //System.out.println("成功生成二维码：" + file);
+                return true;
             }
 
         } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
-        return true;
+        return false;
     }
 
     private static void writeToFile(BitMatrix matrix, String format, File file) throws IOException {
