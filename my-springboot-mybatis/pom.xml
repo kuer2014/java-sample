@@ -53,7 +53,25 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-
+		<!--<dependency>-->
+			<!--<groupId>org.thymeleaf</groupId>-->
+			<!--<artifactId>thymeleaf</artifactId>-->
+			<!--<version> 3.0.3.RELEASE</version>-->
+		<!--</dependency>-->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.github.pagehelper</groupId>-->
+			<!--<artifactId>pagehelper</artifactId>-->
+			<!--<version>5.0.4</version>-->
+		<!--</dependency>-->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>1.2.10</version>
+		</dependency>
 	</dependencies>
 
 	<build>

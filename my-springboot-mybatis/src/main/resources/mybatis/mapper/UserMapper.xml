@@ -7,7 +7,7 @@
         select id, user_name,pass_word,email  from user where id=#{id};
     </select>
     <select id="findAll" resultType="com.my.model.User">
-        select id, user_name,pass_word,email from user;
+        select id, user_name,pass_word,email from user
     </select>
     <insert id="addUser" parameterType="com.my.model.User">
       INSERT INTO user (user_name, pass_word, email) VALUES ( #{user_name}, #{pass_word}, #{email});
