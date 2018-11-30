@@ -9,4 +9,6 @@ package git;
 public class TestMerge2 {
     String branchMaster="2";
     String branchDev="2";
+    String branchDev3="3";
+
 }
