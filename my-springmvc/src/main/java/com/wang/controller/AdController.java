@@ -4,6 +4,8 @@ import com.wang.model.CalculateModel;
 import com.wang.model.CarPO;
 import com.wang.services.Calculate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -22,6 +24,7 @@ import javax.servlet.http.Part;
 import javax.validation.Valid;
 import java.io.*;
 import java.net.MalformedURLException;
+import java.util.Date;
 
 /**
  * Description:Controller的基本语法测试
@@ -89,10 +92,12 @@ public class AdController {
         return name + code;
     }
 
-    @RequestMapping({"edit"})
+    ///get: /ad/edit   或 /ad/edit1
+    @RequestMapping(value={"edit","edit1"})
     public String edit(Model model) {
         return "ad/edit";
     }
+
     @RequestMapping(value = "paramByList", method = RequestMethod.POST)
     @ResponseBody
     public int paramByList(@RequestParam int id) {
@@ -100,4 +105,16 @@ public class AdController {
 
         return  id;
     }
+    ///get:/ad/pf?id=22,222&date=201203  或 /ad/pf?id=22,222&date=20123 或 /ad/pf?id=22222&date=20123
+    @RequestMapping(value = "pf", method = RequestMethod.GET)
+    @ResponseBody
+    public int paramFormatTest(@RequestParam  @NumberFormat(pattern = "###,###.###")int id,
+                               @RequestParam @DateTimeFormat(pattern = "yyyyMM") Date date) {
+        return  id;
+    }
 }
+
+
+
+
+
