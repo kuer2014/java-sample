@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/data/mongo
+       http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+">
+   <bean id="testM" class="com.wang.model.TestM"></bean>
+    <!-- 开启注解 -->
+    <!--<context:annotation-config />-->
+     <!--&lt;!&ndash;属性文件读入,使用rapid中的JdbcPlaceholderConfigurer则可以从数据库读取配置信息&ndash;&gt;-->
+    <!--<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+        <!--<property name="locations">-->
+            <!--<list>-->
+                <!--<value>classpath:config.properties</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+
+    <!--提供自动注入配置的扫描包-->
+    <!--<context:component-scan base-package="org.springframework.data.mongodb"/>-->
+
+    <context:property-placeholder location="classpath:config.properties" file-encoding="utf-8"/>
+    <!-- 创建MongoClient -->
+    <mongo:mongo-client id="mongoClient" replica-set="${mongo.rs}" credentials="${mongo.username}:${mongo.password}@${mongo.dbname}">
+        <mongo:client-options connections-per-host="${mongo.connectionsPerHost}"
+                              threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}"
+                              connect-timeout="${mongo.connectTimeout}"
+                              max-wait-time="${mongo.maxWaitTime}"
+                              socket-keep-alive="${mongo.socketKeepAlive}"
+                              socket-timeout="${mongo.socketTimeout}"
+                              read-preference="${mongo.readPreference}"/>
+    </mongo:mongo-client>
+
+    <!-- MongoDbFactory -->
+    <mongo:db-factory id="mgFactory" dbname="${mongo.dbname}"  mongo-ref="mongoClient"/>
+
+    <!-- MongoTemplate -->
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongoDbFactory" ref="mgFactory"/>
+    </bean>
+</beans>
