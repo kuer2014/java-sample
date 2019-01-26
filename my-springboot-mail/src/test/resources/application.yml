@@ -1,0 +1,12 @@
+stmp:
+  host: smtp.exmail.qq.com
+  account: wangshuai@cloud-young.com
+  password: abcabc
+mail:
+  smtp:
+    auth: true
+    timeout: 25000
+multipart:
+  enabled: true
+  max-file-size: 50mb
+  max-request-size: 50mb
