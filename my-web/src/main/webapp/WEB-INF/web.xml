@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app>
+    <display-name>my servlet app</display-name>
+    <servlet>
+        <description>my servlet</description>
+        <display-name>my servlet app</display-name>
+        <servlet-name>myapp</servlet-name>
+        <servlet-class>myweb.MyHttpServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>myapp</servlet-name>
+        <url-pattern>/ser/myapp</url-pattern>
+    </servlet-mapping>
+</web-app>
