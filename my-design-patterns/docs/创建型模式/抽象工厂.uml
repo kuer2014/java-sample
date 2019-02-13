@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.wang.my.factory.abstractdemo2.AutoFactory</OriginalElement>
+  <nodes>
+    <node x="-41.0" y="-54.0">com.wang.my.factory.abstractdemo2.AudiSuv</node>
+    <node x="-160.0" y="-54.0">com.wang.my.factory.abstractdemo2.AudiCar</node>
+    <node x="-89.75" y="-214.0">com.wang.my.factory.abstractdemo2.Auto</node>
+    <node x="-191.0" y="92.0">com.wang.my.factory.abstractdemo2.AudiFactory</node>
+    <node x="-282.0" y="-54.0">com.wang.my.factory.abstractdemo2.BenzCar</node>
+    <node x="80.0" y="-54.0">com.wang.my.factory.abstractdemo2.BenzSuv</node>
+    <node x="-47.0" y="92.0">com.wang.my.factory.abstractdemo2.BenzFactory</node>
+    <node x="-119.25" y="12.0">com.wang.my.factory.abstractdemo2.AutoFactory</node>
+    <node x="-206.25" y="-134.0">com.wang.my.factory.abstractdemo2.Car</node>
+    <node x="34.25" y="-134.0">com.wang.my.factory.abstractdemo2.Suv</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.wang.my.factory.abstractdemo2.BenzCar" target="com.wang.my.factory.abstractdemo2.Car">
+      <point x="0.0" y="-15.0" />
+      <point x="-231.0" y="-79.0" />
+      <point x="-188.5" y="-79.0" />
+      <point x="-17.75" y="15.0" />
+    </edge>
+    <edge source="com.wang.my.factory.abstractdemo2.BenzFactory" target="com.wang.my.factory.abstractdemo2.AutoFactory">
+      <point x="0.0" y="-15.0" />
+      <point x="16.5" y="67.0" />
+      <point x="-24.75" y="67.0" />
+      <point x="31.5" y="15.0" />
+    </edge>
+    <edge source="com.wang.my.factory.abstractdemo2.Car" target="com.wang.my.factory.abstractdemo2.Auto">
+      <point x="0.0" y="-15.0" />
+      <point x="-170.75" y="-159.0" />
+      <point x="-69.75" y="-159.0" />
+      <point x="-20.0" y="15.0" />
+    </edge>
+    <edge source="com.wang.my.factory.abstractdemo2.AudiCar" target="com.wang.my.factory.abstractdemo2.Car">
+      <point x="0.0" y="-15.0" />
+      <point x="-110.5" y="-79.0" />
+      <point x="-153.0" y="-79.0" />
+      <point x="17.75" y="15.0" />
+    </edge>
+    <edge source="com.wang.my.factory.abstractdemo2.AudiFactory" target="com.wang.my.factory.abstractdemo2.AutoFactory">
+      <point x="0.0" y="-15.0" />
+      <point x="-129.0" y="67.0" />
+      <point x="-87.75" y="67.0" />
+      <point x="-31.5" y="15.0" />
+    </edge>
+    <edge source="com.wang.my.factory.abstractdemo2.BenzSuv" target="com.wang.my.factory.abstractdemo2.Suv">
+      <point x="0.0" y="-15.0" />
+      <point x="132.0" y="-79.0" />
+      <point x="89.0" y="-79.0" />
+      <point x="18.25" y="15.0" />
+    </edge>
+    <edge source="com.wang.my.factory.abstractdemo2.Suv" target="com.wang.my.factory.abstractdemo2.Auto">
+      <point x="0.0" y="-15.0" />
+      <point x="70.75" y="-159.0" />
+      <point x="-29.75" y="-159.0" />
+      <point x="20.0" y="15.0" />
+    </edge>
+    <edge source="com.wang.my.factory.abstractdemo2.AudiSuv" target="com.wang.my.factory.abstractdemo2.Suv">
+      <point x="0.0" y="-15.0" />
+      <point x="9.5" y="-79.0" />
+      <point x="52.5" y="-79.0" />
+      <point x="-18.25" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="63.0" y="15.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
