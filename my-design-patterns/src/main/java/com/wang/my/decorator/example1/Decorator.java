@@ -12,7 +12,10 @@ public abstract class Decorator implements Component {
     public Decorator(Component component) {
         this.component = component;
     }
-    public void biu() {
-        this.component.biu();
-    }
+    //可有可无，
+    // 没有该方法时具体装饰类直接调用具体被装饰类；
+    // 有该方法时，可以在多个具体装饰类中拥有共同的装饰行为。
+//    public void biu() {
+//        this.component.biu();
+//    }
 }
