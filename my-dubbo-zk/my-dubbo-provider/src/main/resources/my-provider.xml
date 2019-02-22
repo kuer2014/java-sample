@@ -4,15 +4,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="demo-provider"/>
-    <!-- 使用multicast广播注册中心暴露服务地址 -->
-    <dubbo:registry address="zookeeper://localhost:2181"/>
+    <!-- 使用multicast广播注册中心 暴露服务地址 -->
     <!--<dubbo:registry address="multicast://224.5.6.7:1234"/>-->
-    <!-- 用dubbo协议在20880端口暴露服务 -->
+    <dubbo:registry address="zookeeper://localhost:2181"/>
+    <!--<dubbo:registry address="192.168.200.128:2181,192.168.200.129:2181,192.168.200.130:2181" protocol="zookeeper"/> -->
+<!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20880"/>
-    <!-- 声明需要暴露的服务接口 -->
+    <!-- 声明需要暴露的服务接口,使客户端可以像使用本地bean一样使用服务-->
     <dubbo:service interface="my.dubbo.provider.DemoService" ref="demoService"/>
-    <!-- 和本地bean一样实现服务 -->
     <bean id="demoService" class="my.dubbo.provider.DemoServiceImpl"/>
-<dubbo:service interface="my.dubbo.provider.CalcService" ref="calcService"></dubbo:service>
+
+    <dubbo:service interface="my.dubbo.provider.CalcService" ref="calcService"></dubbo:service>
     <bean id="calcService" class="my.dubbo.provider.CalcServiceImpl"/>
 </beans>
