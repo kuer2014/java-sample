@@ -2,21 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.my.dao.UserDao">
-
+    <!--二级缓存配置-->
+    <!--<cache-->
+            <!--eviction="FIFO"-->
+            <!--flushInterval="60000"-->
+            <!--size="512"-->
+            <!--readOnly="true"/>-->
     <select id="findById" resultType="com.my.model.User" parameterType="Long">
-        select id, user_name,pass_word,email  from user where id=#{id};
-    </select>
-    <select id="findAll" resultType="com.my.model.User">
-        select id, user_name,pass_word,email from user
-    </select>
-    <insert id="addUser" parameterType="com.my.model.User">
-      INSERT INTO user (user_name, pass_word, email) VALUES ( #{user_name}, #{pass_word}, #{email});
-    </insert>
+        <!-- select id, user_name,pass_word,email  from user where id=#{id};-->
+           select id, user_name,t.t_name pass_word,email  from user u,teacher t where id= #{id} and u.id=t.t_id
+       </select>
+       <select id="findAll" resultType="com.my.model.User">
+           select id, user_name,pass_word,email from user
+       </select>
+       <insert id="addUser" parameterType="com.my.model.User">
+         INSERT INTO user (user_name, pass_word, email) VALUES ( #{user_name}, #{pass_word}, #{email});
+       </insert>
 
-    <select id="findEmailByName" statementType="CALLABLE" resultType="java.util.Map">
-    {call find_email_by_name(
-    #{name, mode=IN},
-    #{email, mode=OUT, jdbcType=VARCHAR}
-    )}
-    </select>
-</mapper>
+       <select id="findEmailByName" statementType="CALLABLE" resultType="java.util.Map">
+       {call find_email_by_name(
+       #{name, mode=IN},
+       #{email, mode=OUT, jdbcType=VARCHAR}
+       )}
+       </select>
+   </mapper>
