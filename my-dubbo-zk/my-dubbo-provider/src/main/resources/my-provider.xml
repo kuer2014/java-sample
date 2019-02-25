@@ -6,6 +6,7 @@
     <dubbo:application name="demo-provider"/>
     <!-- 使用multicast广播注册中心 暴露服务地址 -->
     <!--<dubbo:registry address="multicast://224.5.6.7:1234"/>-->
+    <!-- 使用zookeeper注册中心 暴露服务地址 -->
     <dubbo:registry address="zookeeper://localhost:2181"/>
     <!--<dubbo:registry address="192.168.200.128:2181,192.168.200.129:2181,192.168.200.130:2181" protocol="zookeeper"/> -->
 <!-- 用dubbo协议在20880端口暴露服务 -->
