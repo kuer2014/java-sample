@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.wang.my.factory.method.MailSendFactoryImpl</OriginalElement>
+  <nodes>
+    <node x="162.0" y="301.0">com.wang.my.factory.method.SmsSenderImpl</node>
+    <node x="0.0" y="301.0">com.wang.my.factory.method.MailSenderImpl</node>
+    <node x="82.5" y="199.0">com.wang.my.factory.method.Sender</node>
+    <node x="105.0" y="0.0">com.wang.my.factory.method.SendFactory</node>
+    <node x="0.0" y="102.0">com.wang.my.factory.method.SmsSendFactoryImpl</node>
+    <node x="210.0" y="102.0">com.wang.my.factory.method.MailSendFactoryImpl</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.wang.my.factory.method.MailSenderImpl" target="com.wang.my.factory.method.Sender">
+      <point x="0.0" y="-26.0" />
+      <point x="71.0" y="276.0" />
+      <point x="117.5" y="276.0" />
+      <point x="-35.0" y="26.0" />
+    </edge>
+    <edge source="com.wang.my.factory.method.SmsSendFactoryImpl" target="com.wang.my.factory.method.SendFactory">
+      <point x="0.0" y="-26.0" />
+      <point x="95.0" y="77.0" />
+      <point x="152.5" y="77.0" />
+      <point x="-47.5" y="26.0" />
+    </edge>
+    <edge source="com.wang.my.factory.method.SmsSenderImpl" target="com.wang.my.factory.method.Sender">
+      <point x="0.0" y="-26.0" />
+      <point x="234.0" y="276.0" />
+      <point x="187.5" y="276.0" />
+      <point x="35.0" y="26.0" />
+    </edge>
+    <edge source="com.wang.my.factory.method.MailSendFactoryImpl" target="com.wang.my.factory.method.SendFactory">
+      <point x="0.0" y="-26.0" />
+      <point x="305.0" y="77.0" />
+      <point x="247.5" y="77.0" />
+      <point x="47.5" y="26.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="88.0" y="129.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
