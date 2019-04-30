@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Description:
+ * Description: exchange.hearders 交换机
  * All Rights Reserved.
  * 原文：https://blog.csdn.net/vbirdbest/article/details/78638988
  * @version 1.0  2019-04-03 10:46  by  王帅（wangshuai@cloud-young.com）创建

@@ -44,7 +44,7 @@ public class SendApp {
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
             //4.队列绑定交换机。   绑定键的意义依赖于转发器的类型，对于fanout类型，忽略此参数（第三个参数为binding key）。
             channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, "");
-
+           //5.发布消息
             for (int i = 0; i < 2; i++) {
                 String message = "Hello World!" + i;
                 channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
@@ -57,6 +57,32 @@ public class SendApp {
 //            channel.basicPublish(EXCHANGE_NAME, "", properties.build(), ("message hello").getBytes("UTF-8"));
 //            //原文：https://blog.csdn.net/vbirdbest/article/details/78670550
 
+           //region 生产者确认
+
+/* 原文：https://blog.csdn.net/vbirdbest/article/details/78699913
+ 当生产者发布消息到RabbitMQ中，生产者需要知道是否真的已经发送到RabbitMQ中，需要RabbitMQ告诉生产者。
+        (1).Confirm机制
+channel.confirmSelect();
+String message = "Hello RabbitMQ:";
+for (int i = 0; i < 5; i++) {
+    channel.basicPublish(EXCHANGE_NAME, ROUTING_KEY, null, (message + i).getBytes("UTF-8"));
+}
+boolean isAllPublished = channel.waitForConfirms();
+
+        (2).事务机制
+String message = "Hello RabbitMQ:";
+try {
+    channel.txSelect();
+    for (int i = 0; i < 5; i++) {
+        channel.basicPublish(EXCHANGE_NAME, ROUTING_KEY, null, (message + i).getBytes("UTF-8"));
+    }
+    channel.txCommit();
+} catch (Exception e) {
+    channel.txRollback();
+}
+注意：事务机制是非常非常非常消耗性能的，最好使用Confirm机制，Confirm机制相比事务机制性能上要好很多。
+            */
+//endregion
             //region Properties 的全部属性：
           /*   Delivery mode: 是否持久化，1 - Non-persistent，2 - Persistent
             Headers：Headers can have any name. Only long string headers can be set here.

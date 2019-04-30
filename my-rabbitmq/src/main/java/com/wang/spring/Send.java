@@ -19,8 +19,7 @@ public class Send {
                 new ClassPathXmlApplicationContext("rabbitmq-context.xml");
         AmqpTemplate template = context.getBean(AmqpTemplate.class);
         template.convertAndSend("myqueue", "foo msg");
-        String foo = (String) template.receiveAndConvert("myqueue");
-        System.out.println("foo = "+foo);
+        System.out.println("ok");
         //template.send();
 
     }
